@@ -31,14 +31,44 @@
     巻末の付録から参照できる。
 \end{abstract}
 
-\section{第１回授業：}
-\section{第２回授業：}
-\section{第３回授業：}
-\section{第４回授業：}
+\section{第1回授業 : 4/11 宿題1}
+    \subsection{問題文}
+    二つのデータ点の近さを測る定量的指標の一つとして距離がある。いま、次の三つのデータ点があるとする
+    \begin{flalign}
+        & \text{データ点1} : (5,2,5.8) \\
+        & \text{データ点2} : (7, 10, 1, 12) \\
+        & \text{データ点3} : (3, 2, 6, 3)
+    \end{flalign}
+    上の各データ点は４種類の計測値で与えられている（例えば「緯度、経度、水深、温度」のような感じ）。
+    このデータ点同士の間の近さをユークリッド距離で計算し、互いの距離が近いペアの順番を答えよ。データが近いほど距離が小さいことに注意。
+    
+    \subsection{解答}
+    データ点の近さは以下の順番である。
+    \begin{enumerate}
+        \item データ店1とデータ点3、距離 : $5.4$
+        \item データ店1とデータ点2、距離 : $10.0$
+        \item データ店2とデータ点3、距離 : $13.6$
+    \end{enumerate}
+    ユークリッド距離は以下の式で計算できる。
+    \begin{flalign*}
+        & d(x,y) :\text{データ点xとデータ点yの距離として、}\\
+        & d(x,y) = \sqrt{\sum_{i=1}^{n}(x_i - y_i)^2} \\
+        & \text{※}x_i,y_i\text{はそれぞれデータ点}x,y\text{のi番目の要素を表す}
+    \end{flalign*}
+    各点間の距離は以下のように計算できる
+    \begin{flalign*}
+        & d(1,3) = \sqrt{(5-3)^2 + (2-2)^2 + (5.8-6)^2 + (0-3)^2} = 5.4 \\
+        & d(1,2) = \sqrt{(5-7)^2 + (2-10)^2 + (5.8-1)^2 + (0-12)^2} = 10.0 \\
+        & d(2,3) = \sqrt{(7-3)^2 + (10-2)^2 + (1-6)^2 + (12-3)^2} = 13.6
+    \end{flalign*}
+
+\section{第2回授業 : }
+\section{第3回授業 : }
+\section{第4回授業 : }
 
 \section{付録}
 \begin{itemize}
-    \item GoogleColaboratory : 
-    \item GoogleDrive : 
+    \item GoogleColabノートブック : 
+    \item 提出用GoogleDriveフォルダ : 
 \end{itemize}
 \end{document}

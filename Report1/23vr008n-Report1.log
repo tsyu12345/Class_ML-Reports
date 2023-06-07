@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.6.1)  4 JUN 2023 16:55
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.6.1)  7 JUN 2023 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -454,12 +454,9 @@ LaTeX Info: Redefining \nameref on input line 23.
 \@outlinefile=\write3
 \openout3 = `23vr008n-Report1.out'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
 6.
+
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -513,30 +510,35 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 34.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 34.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 35.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 35.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 37.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 37.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 37.
+ [1
+
+]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
 1.
 
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [1
-
-] (./23vr008n-Report1.aux)
-
-Package rerunfilecheck Warning: File `23vr008n-Report1.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `23vr008n-Report1.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  A428D06E393C51B0D05F32E65CED7B65;253.
+) [2] (./23vr008n-Report1.aux)
+Package rerunfilecheck Info: File `23vr008n-Report1.out' has not changed.
+(rerunfilecheck)             Checksum: 8C271C391EDF469B3F67AE066AEC1FB8;370.
  ) 
 Here is how much of TeX's memory you used:
- 10466 strings out of 479777
- 164440 string characters out of 5885797
- 453381 words of memory out of 5000000
- 28617 multiletter control sequences out of 15000+600000
- 510241 words of font info for 84 fonts, out of 8000000 for 9000
+ 10508 strings out of 479777
+ 164875 string characters out of 5885797
+ 460820 words of memory out of 5000000
+ 28645 multiletter control sequences out of 15000+600000
+ 531561 words of font info for 105 fonts, out of 8000000 for 9000
  309 hyphenation exceptions out of 8191
- 68i,6n,76p,269b,328s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,10n,76p,269b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 23vr008n-Report1.dvi (1 page, 2508 bytes).
+Output written on 23vr008n-Report1.dvi (2 pages, 6700 bytes).
