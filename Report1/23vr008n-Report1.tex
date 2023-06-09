@@ -78,9 +78,96 @@
         \item モデル1→モデル2→モデル3の順に、Precisionは増加や減少の傾向にあるでしょうか？その傾向はなぜ生じるでしょう？また、Recallについても傾向はどうなっていますか？Precisionの傾向と対比して議論して見てください。
     \end{enumerate}
     
+    \subsection{解答:問１}
+    まず、各モデルの混同行列とPrecision、Recallを計算した結果は以下のようになる。
+    \subsubsection{モデル１}
+    % Please add the following required packages to your document preamble:
+    % \usepackage{multirow}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{llcc}
+                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{2}{c}{予測}                         \\
+                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{1}{c|}{陰性} & 陽性                   \\ \hline
+        \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}実\\ データ\end{tabular}} & \multicolumn{1}{c|}{陰性} & \multicolumn{1}{c|}{1}  & 0                    \\ \cline{2-4} 
+                                                                        & \multicolumn{1}{c|}{陽性} & \multicolumn{1}{c|}{6}  & 9                    \\
+                                                                        &                         & \multicolumn{1}{l}{}    & \multicolumn{1}{l}{}
+        \end{tabular}
+        \caption{モデル1の混同行列}
+    \end{table}
+    \begin{itemize}
+        \centering
+        \item Precision : $1.0$
+        \item Recall : $0.14$
+    \end{itemize}
+
+    \subsubsection{モデル2}
+    % Please add the following required packages to your document preamble:
+    % \usepackage{multirow}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{llcc}
+                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{2}{c}{予測}                         \\
+                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{1}{c|}{陰性} & 陽性                   \\ \hline
+        \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}実\\ データ\end{tabular}} & \multicolumn{1}{c|}{陰性} & \multicolumn{1}{c|}{6}  & 3                    \\ \cline{2-4} 
+                                                                        & \multicolumn{1}{c|}{陽性} & \multicolumn{1}{c|}{1}  & 6                    \\
+                                                                        &                         & \multicolumn{1}{l}{}    & \multicolumn{1}{l}{}
+        \end{tabular}
+        \caption{モデル2の混同行列}
+    \end{table}
+    \begin{itemize}
+        \centering
+        \item Precision : $0.66$
+        \item Recall : $0.85$
+    \end{itemize}
+
+    \subsubsection{モデル3}
+    % Please add the following required packages to your document preamble:
+    % \usepackage{multirow}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{llcc}
+                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{2}{c}{予測}                         \\
+                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{1}{c|}{陰性} & 陽性                   \\ \hline
+        \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}実\\ データ\end{tabular}} & \multicolumn{1}{c|}{陰性} & \multicolumn{1}{c|}{7}  & 7                    \\ \cline{2-4} 
+                                                                        & \multicolumn{1}{c|}{陽性} & \multicolumn{1}{c|}{0}  & 2                    \\
+                                                                        &                         & \multicolumn{1}{l}{}    & \multicolumn{1}{l}{}
+        \end{tabular}
+    \end{table}
+    \begin{itemize}
+        \centering
+        \item Precision : $0.5$
+        \item Recall : $1.0$
+    \end{itemize}
+
+    \subsection{解答:問２}
+    計算結果から、Precision（適合率）は減少の傾向にあるといえる。Precisionは、陽性と予測したデータ数のうち、実際に陽性だったデータ数の割合を示す。計算式で示すと以下の通り。
+    \begin{flalign*}
+        & Precision = \frac{TP}{TP + FP} \\
+        & \text{※}TP\text{は真陽性、FPは偽陽性を表す}
+    \end{flalign*}
+    この式より、Precisionは分母の、モデルが陽性と予測した数が少なければ値が大きくなる傾向にあることがわかる。
+    モデル1では陽性と予測されたデータ数は$1$で、モデル2では$9$、モデル3では$14$と徐々に陽性予測のデータ数が増えており、Precisionの式の分母が大きくなっているので、
+    モデル1～モデル3にかけてPrecisionは減少していると考えられる。\par
+
+    また、Recall（再現率）は増加の傾向にあるといえる。Recallは、実際に陽性だったデータのうち、モデルが正しく陽性と予測したデータ数の割合を示す。計算式で示すと以下の通り。
+    \begin{flalign*}
+        & Recall = \frac{TP}{TP + FN} \\
+        & \text{※}TP\text{は真陽性、FNは偽陰性を表す}
+    \end{flalign*}
+    この式より、Recallは分母の、実際は陽性だが予測では陰性だった割合が少ないほどRecallは大きくなる傾向にあることがわかる。
+    実際は陽性だったデータのうち、モデルが陰性と予測したデータの割合がモデル1～モデル3にかけて減少したことから、Recallは増加していると考えられる。\par
+
+
+\section{第3回授業 : 4/25 宿題1}
+    \subsection{問題文}
+    Xの数値スケールが大きく(例えば0～1000000)、Yのスケールが小さい(例えば0～1)データに対して、スケーラを使わないで回帰をしたとする。
+    \begin{enumerate}
+        \item 勾配降下法で学習率を大きくしても小さくしても問題が起こることを説明せよ。
+        \item パラメータ$a, b$ごとに学習率を変えて勾配降下法をすれば、スケーラを使わなくても 1. の問題は抑制できるか？具体的な誤差関数の形を使って議論せよ。
+    \end{enumerate}
+
     \subsection{解答}
 
-\section{第3回授業 : }
 \section{第4回授業 : }
 
 \section{付録}
