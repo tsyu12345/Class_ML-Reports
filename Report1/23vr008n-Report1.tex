@@ -50,9 +50,9 @@
     \subsection{解答}
     データ点の近さは以下の順番である。
     \begin{enumerate}
-        \item データ店1とデータ点3、距離 : $5.4$
-        \item データ店1とデータ点2、距離 : $10.0$
-        \item データ店2とデータ点3、距離 : $13.6$
+        \item データ点1とデータ点3、距離 : $5.4$
+        \item データ点1とデータ点2、距離 : $10.0$
+        \item データ点2とデータ点3、距離 : $13.6$
     \end{enumerate}
     ユークリッド距離は以下の式で計算できる。
     \begin{flalign*}
@@ -67,7 +67,7 @@
         & d(2,3) = \sqrt{(7-3)^2 + (10-2)^2 + (1-6)^2 + (12-3)^2} = 13.6
     \end{flalign*}
 
-\section{第2回授業 : 4/18 宿題2}
+\section{第2回授業 : 4/18 宿題2}% TODO:PrecisionとRecallを再計算すること
     \subsection{問題文}
     \begin{figure}[H]
         \centering
@@ -82,22 +82,22 @@
     まず、各モデルの混同行列とPrecision、Recallを計算した結果は以下のようになる。
     \subsubsection{モデル１}
     % Please add the following required packages to your document preamble:
-    % \usepackage{multirow}
+% \usepackage{multirow}
     \begin{table}[H]
         \centering
         \begin{tabular}{llcc}
                                                                         & \multicolumn{1}{l|}{}   & \multicolumn{2}{c}{予測}                         \\
-                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{1}{c|}{陰性} & 陽性                   \\ \hline
-        \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}実\\ データ\end{tabular}} & \multicolumn{1}{c|}{陰性} & \multicolumn{1}{c|}{1}  & 0                    \\ \cline{2-4} 
-                                                                        & \multicolumn{1}{c|}{陽性} & \multicolumn{1}{c|}{6}  & 9                    \\
+                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{1}{c|}{陽性} & 陰性                   \\ \hline
+        \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}実\\ データ\end{tabular}} & \multicolumn{1}{c|}{陽性} & \multicolumn{1}{c|}{1}  & 6                    \\ \cline{2-4} 
+                                                                        & \multicolumn{1}{c|}{陰性} & \multicolumn{1}{c|}{0}  & 9                    \\
                                                                         &                         & \multicolumn{1}{l}{}    & \multicolumn{1}{l}{}
         \end{tabular}
         \caption{モデル1の混同行列}
     \end{table}
     \begin{itemize}
         \centering
-        \item Precision : $1.0$
-        \item Recall : $0.14$
+        \item Precision : $\frac{TP}{TP + FP} = \frac{1}{1 + 0} = 1.0$
+        \item Recall : $\frac{TP}{TP + FN} = \frac{1}{1 + 6} = \frac{1}{7} \approx 0.14$
     \end{itemize}
 
     \subsubsection{モデル2}
@@ -107,36 +107,37 @@
         \centering
         \begin{tabular}{llcc}
                                                                         & \multicolumn{1}{l|}{}   & \multicolumn{2}{c}{予測}                         \\
-                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{1}{c|}{陰性} & 陽性                   \\ \hline
-        \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}実\\ データ\end{tabular}} & \multicolumn{1}{c|}{陰性} & \multicolumn{1}{c|}{6}  & 3                    \\ \cline{2-4} 
-                                                                        & \multicolumn{1}{c|}{陽性} & \multicolumn{1}{c|}{1}  & 6                    \\
+                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{1}{c|}{陽性} & 陰性                   \\ \hline
+        \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}実\\ データ\end{tabular}} & \multicolumn{1}{c|}{陽性} & \multicolumn{1}{c|}{6}  & 1                    \\ \cline{2-4} 
+                                                                        & \multicolumn{1}{c|}{陰性} & \multicolumn{1}{c|}{3}  & 6                    \\
                                                                         &                         & \multicolumn{1}{l}{}    & \multicolumn{1}{l}{}
         \end{tabular}
         \caption{モデル2の混同行列}
     \end{table}
     \begin{itemize}
         \centering
-        \item Precision : $0.66$
-        \item Recall : $0.85$
+        \item Precision : $ \frac{6}{6 + 3} = \frac{2}{3}  \approx 0.67$
+        \item Recall : $ \frac{6}{6 + 1} = \frac{6}{7} \approx 0.86$
     \end{itemize}
 
     \subsubsection{モデル3}
-    % Please add the following required packages to your document preamble:
+   % Please add the following required packages to your document preamble:
     % \usepackage{multirow}
     \begin{table}[H]
         \centering
         \begin{tabular}{llcc}
                                                                         & \multicolumn{1}{l|}{}   & \multicolumn{2}{c}{予測}                         \\
-                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{1}{c|}{陰性} & 陽性                   \\ \hline
-        \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}実\\ データ\end{tabular}} & \multicolumn{1}{c|}{陰性} & \multicolumn{1}{c|}{7}  & 7                    \\ \cline{2-4} 
-                                                                        & \multicolumn{1}{c|}{陽性} & \multicolumn{1}{c|}{0}  & 2                    \\
+                                                                        & \multicolumn{1}{l|}{}   & \multicolumn{1}{c|}{陽性} & 陰性                   \\ \hline
+        \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}実\\ データ\end{tabular}} & \multicolumn{1}{c|}{陽性} & \multicolumn{1}{c|}{7}  & 0                    \\ \cline{2-4} 
+                                                                        & \multicolumn{1}{c|}{陰性} & \multicolumn{1}{c|}{7}  & 2                    \\
                                                                         &                         & \multicolumn{1}{l}{}    & \multicolumn{1}{l}{}
         \end{tabular}
+        \caption{モデル3の混同行列}
     \end{table}
     \begin{itemize}
         \centering
-        \item Precision : $0.5$
-        \item Recall : $1.0$
+        \item Precision : $ \frac{7}{7 + 7} = \frac{1}{2} = 0.5$
+        \item Recall : $ \frac{7}{7 + 0} = 1.0$
     \end{itemize}
 
     \subsection{解答:問２}
@@ -166,7 +167,35 @@
         \item パラメータ$a, b$ごとに学習率を変えて勾配降下法をすれば、スケーラを使わなくても 1. の問題は抑制できるか？具体的な誤差関数の形を使って議論せよ。
     \end{enumerate}
 
-    \subsection{解答}
+    \subsection{解答:問１}
+    特徴量の間のスケールの差が大きい場合、勾配降下法実行時に行われるパラメータの更新幅が、パラメータによって偏りが生じるという現象が生じる。
+    つまり、パラメータのスケールが異なる場合、学習率の大小に関係なく、勾配の進み幅（パラメータの更新幅）がバラバラになる。
+    その結果、最適解に収束しないことがあるので、スケーラーを使わない場合よりも、学習を完了するまで時間が長くなったり、モデルの精度が悪くなるという問題がある。\par 
+    \noindent
+    この問題はなぜ生じるのか、それはパラメータの更新幅が、特徴量の大きさに依存するからである。
+    勾配降下法では、パラメータの更新幅は以下の式で表される。
+    \begin{flalign*}
+        & \theta_{new} = \theta_{old} - \eta \frac{\partial J(\theta)}{\partial \theta} \\
+        & \text{※}J(\theta)\text{はコスト関数、}\eta\text{は学習率を表す}
+    \end{flalign*}
+    この式より、パラメータの更新幅は、学習率と誤差関数の勾配の積に比例することがわかる。
+    ゆえに、誤差関数の勾配は、特徴量の大きさに依存し、特徴量の大きさ・スケールが異なる場合、誤差関数の勾配も異なる。
+    そのため、特徴量のスケールが異なる場合、パラメータの更新幅も異なるため、最適解に収束しないことがある。\par
+
+    \subsection{解答:問２}
+    結論を先に考えれば、スケーラーを使わなくてもこの問題は抑止できるはずである。
+    具体的な誤差関数として平均2乗誤差を用いた場合、
+    \begin{flalign*}
+        \hat{y}_{i} = ax_images + b \\
+        MSE(a,b) = \frac{1}{n}\sum_{i=1}^{n}(\hat{y_i})^2
+    \end{flalign*}
+    
+
+
+
+
+
+
 
 \section{第4回授業 : }
 
