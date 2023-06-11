@@ -9,7 +9,8 @@
 \usepackage{nccmath}
 \usepackage{amsthm}
 \usepackage{multirow}
-\usepackage[dvipdfmx]{graphicx}
+\usepackage{graphicx}
+\usepackage[dvipdfmx]{color}
 \usepackage{wrapfig}
 \usepackage{here}
 \usepackage{float}
@@ -106,9 +107,6 @@
     \end{enumerate}
     
     \subsection{解答:問１}
-    \begin{itemize}
-        \item ファイル名 : Report1-Q2.ipynb
-    \end{itemize}
     まず、各モデルの混同行列とPrecision、Recallを計算した結果は以下のようになる。
     \subsubsection{モデル１}
     % Please add the following required packages to your document preamble:
@@ -241,10 +239,6 @@
     $R^2$ によるscore計算をNumpyを用いて実装して見ましょう（sklearnの出来合いの関数を使ってはいけません）。R2の定義式は講義のスライド参照。
 
     \subsection{解答}
-    \begin{itemize}
-        \item ファイル名 : ML4\_Taki.ipynb
-        \item 該当箇所 : 最下部のセル
-    \end{itemize}
     授業資料のノートブックに以下の関数を作成し、テストコードを実行した。そのコードと結果を以下に示す。
     \begin{lstlisting}
         from numpy import ndarray
@@ -275,7 +269,11 @@
         
 
 \section{付録}
+各課題のコード(notebook形式)は、下記リンクのGoogleDriveフォルダに格納している。ノートブックのファイル名は\textbf{23vr008n-Report1.ipynb}。
 \begin{itemize}
-    \item 提出用GoogleDriveフォルダ : \url{https://drive.google.com/drive/folders/1DZd7YFLM37_FVvvhxdTS5-6y9YXI4ulB?usp=drive_link}
+    \item 提出用GoogleDriveフォルダ
+    \begin{itemize}
+        \item \url{https://drive.google.com/drive/folders/1DZd7YFLM37_FVvvhxdTS5-6y9YXI4ulB?usp=drive_link}
+    \end{itemize}
 \end{itemize}
 \end{document}
