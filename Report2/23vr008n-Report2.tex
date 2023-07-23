@@ -58,9 +58,6 @@
     本稿は、第５回授業～第１１回授業までの範囲を対象とし、各回で課された課題に対する解答を記載する。\par
     \noindent
     答案の問題番号は各章のタイトルに記載している。\par
-    \noindent
-    各問に対する解答は本稿に、コードなどの実行結果は別途GoogleColaboratoryのノートブックに記載した
-    巻末の付録から参照できる。
 \end{abstract}
 
 \section{第5回授業 : 5/16 問題２}
@@ -116,27 +113,63 @@
     LASSOだけではなく、Ridgeも試してみましょう。
     モデルの学習結果から、データに関する何らかの仮説が立てられたり洞察が得られるとベストです
     \subsection{解答}
-    本課題に対する解答は、以下のGoogleColabに記載している。ここでは、本課題に対して解答したソースコードのみを記載する。
+    本課題に対する解答は、以下のGoogleColabに記載している。ここでは、本課題に対して解答したソースコードのリンクのみを記載する。
     \begin{itemize}
         \item ファイル(code.ipynb) : \url{https://colab.research.google.com/drive/1Zx4wYZWsR5Ge_Phy0yRFJbOT9IO5puMr?usp=sharing}
         \item 使用データセット(SSDSE-C-2023.csv) : \url{https://drive.google.com/file/d/1-LLPqbwy09z1qwkAQnVIXE2dTMomZiyc/view?usp=drive_link}
     \end{itemize}
 
 
-\section{第7回授業 : 問題１}
+\section{第7回授業 : 問題２}
 
     \subsection{問題文}
-    クロスエントロピーの勾配と決定境界について、以下の問に答えよ。
+    クロスエントロピーの大事な性質。
     \begin{enumerate}
-        \item $a$に関する勾配の導出を(丁寧に)まとめよ（写経）。
-        \item $b$に関する勾配も丁寧に導出せよ。
-        \item 決定境界を直線ではなく、放物線のように曲げるにはロジスティック回帰の式をどう変更すればいいか？
-        \begin{itemize}
-            \item 言葉でふんわり説明ではなく、数式をきちんと使って「アルゴリズム」にできるような議論を。
-        \end{itemize}
+        \item クロスエントロピーは常にゼロ以上であることを示せ。
+        \item クロスエントロピーがゼロとなるのは、各データ点$x_n$に対して、ロジスティック回帰モデルの予測$\hat{y}(x)$がどの様な条件を満たすときか。ただし、ラベル$y_n$は0,1の値しかとらないことに注意。
     \end{enumerate}
-    \subsection{解答}
 
+    \subsection{解答}
+    \subsubsection{1.の解答}
+    まず、クロスエントロピーの式を以下で示す。
+    \begin{flalign*}
+        & E(\hat{theta}) = -\sum_{n=1}^{N}\left\{y_n\log\hat{y}(x_n) + (1-y_n)\log(1-\hat{y}(x_n))\right\}
+    \end{flalign*}
+    この式は、各データ点におけるクロスエントロピー誤差の和を示したもので、$y_n$は$n$番目のデータの正解ラベル,$\hat{y}(x_n)$は$n$番目のデータ点に対するモデルの予測確率を表す。\par 
+    このとき、$y_n = 0$の場合、$E(\hat{\theta}) = -\log(1-\hat{y}(x_n))$に、$y_n = 1$の場合、$E(\hat{\theta}) = -\log\hat{y}(x_n)$となる。\par 
+    いずれの場合も、$E(\hat{\theta}) = -\log A$の形をしており、$-\log A$は$A$の値が$0 \to 1$の範囲で変化すると、常に0以上の値をとる関数である。
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{./36320374-d39e-494f-aba1-eaca83d3a841.png}
+        \caption{$-\log A$のグラフ}
+    \end{figure}
+    よって、各項は常に0以上であり、全体の和も0以上となることから、クロスエントロピーは常に0以上であることが示される。
+
+    \subsubsection{2.の解答}
+    クロスエントロピーがゼロになるということは、各データ点に対するモデルの予測$\hat{y}(x_n)$と正解ラベル$y_n$との誤差が0であることを意味する。したがって、$\hat{y}(x_n)$ = $y_n$であるということになる。\par
+    具体的には、
+    \begin{flalign*}
+        & \hat{y}(x_n) = y_n = 0 \text{のとき} \\
+        & \hat{y}(x_n) = y_n = 1 \text{のとき}
+    \end{flalign*}
+    ということになる。これをクロスエントロピー誤差関数の式に代入すると、$y_n = 0$の場合は
+    \begin{flalign*}
+        & E(\hat{\theta}) = -\sum_{n=1}^{N}\left\{y_n\log\hat{y}(x_n) + (1-y_n)\log(1-\hat{y}(x_n))\right\} \\
+        & = -\sum_{n=1}^{N}\left\{0\log\hat{y}(x_n) + (1-0)\log(1-\hat{y}(x_n))\right\} \\
+        & = -\sum_{n=1}^{N}\left\{\log(1-\hat{y}(x_n))\right\} \\
+        & = -\sum_{n=1}^{N}\left\{\log(1-0)\right\} \\
+        & = 0
+    \end{flalign*}
+    となり、$y_n = 1$の場合は
+    \begin{flalign*}
+        & E(\hat{\theta}) = -\sum_{n=1}^{N}\left\{y_n\log\hat{y}(x_n) + (1-y_n)\log(1-\hat{y}(x_n))\right\} \\
+        & = -\sum_{n=1}^{N}\left\{1\log\hat{y}(x_n) + (1-1)\log(1-\hat{y}(x_n))\right\} \\
+        & = -\sum_{n=1}^{N}\left\{\log\hat{y}(x_n)\right\} \\
+        & = -\sum_{n=1}^{N}\left\{\log1\right\} \\
+        & = 0
+    \end{flalign*}
+    となる。\par 
+    ゆえに、クロスエントロピーが0であるには、モデルの予測と正解ラベルが一致することが必要である。
 \section{第10回授業 : 6/20 問題１}
 
     \subsection{問題文}
@@ -149,6 +182,8 @@
         \end{itemize}
     \end{enumerate}
     \subsection{解答}
+    \subsubsection{1.の解答}
+
 
 \section{第11回授業 : 6/27 問題１}
 
@@ -159,6 +194,11 @@
         \item p.60 ~ p.63で得られた双対問題を解いて、\ding{172}と同じ解が求まることえお確認しなさい。
     \end{enumerate}
     \subsection{解答}
+    \subsubsection{1.の解答}
+    
+
+
+    \subsubsection{2.の解答}
 
     
 

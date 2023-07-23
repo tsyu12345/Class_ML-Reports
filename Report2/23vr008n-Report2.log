@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.6.1)  23 JUL 2023 20:14
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.6.1)  23 JUL 2023 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -584,21 +584,21 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 54.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 66.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 63.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 66.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 63.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 67.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 64.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 67.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 64.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 72.
+(Font)              <10> on input line 69.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 72.
+(Font)              <7> on input line 69.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 72.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
-1.
+(Font)              <5> on input line 69.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7
+8.
 
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -609,21 +609,29 @@ File: ./f49644b9-0517-420e-bf51-78b21e18f0ac.png Graphic file (type bmp)
 <./f49644b9-0517-420e-bf51-78b21e18f0ac.png>
  [2]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-21.
+18.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [3] [4] (./23vr008n-Report2.aux)
+)
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 133.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 133.
+File: ./36320374-d39e-494f-aba1-eaca83d3a841.png Graphic file (type bmp)
+<./36320374-d39e-494f-aba1-eaca83d3a841.png>
+ [3] [4] [5] [6]
+(./23vr008n-Report2.aux)
 Package rerunfilecheck Info: File `23vr008n-Report2.out' has not changed.
-(rerunfilecheck)             Checksum: D69D0485D8BC418CE86E13D1B534CAC2;888.
+(rerunfilecheck)             Checksum: EAA0317495AF321989D3013CE4F7F92F;1243.
  ) 
 Here is how much of TeX's memory you used:
- 12636 strings out of 479777
- 195455 string characters out of 5885797
- 675645 words of memory out of 5000000
- 30701 multiletter control sequences out of 15000+600000
- 532570 words of font info for 108 fonts, out of 8000000 for 9000
+ 12648 strings out of 479777
+ 195787 string characters out of 5885797
+ 676645 words of memory out of 5000000
+ 30711 multiletter control sequences out of 15000+600000
+ 535565 words of font info for 109 fonts, out of 8000000 for 9000
  309 hyphenation exceptions out of 8191
- 68i,9n,76p,340b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,10n,76p,340b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 23vr008n-Report2.dvi (4 pages, 16128 bytes).
+Output written on 23vr008n-Report2.dvi (6 pages, 22120 bytes).
